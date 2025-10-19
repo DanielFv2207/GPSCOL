@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoGPS</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="register">
+        <div class="img-register-background"></div>
+        <div class="form" id="loginForm">
+            <h1>Bienvenido de nuevo</h1>
+            <p id="message"></p>
+            <form class="sign-up-form" action="#">
+                
+                <div class="label-names">
+                    <label class="labels">Correo electrónico</label>  <br>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="label-names">
+                    <label class="labels">Contraseña</label> <br>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button href="GPSCOL/index.html" class="sign" type="submit">Iniciar sesión</button>
+                <br>
+                <div class="text-line">o</div>
+                <br>
+            </form>
+            <p id="message"></p>
+            <a href="#" class="google-btn">
+                <img src="Img/google icon.png" alt="Google" class="google-icon">
+                <span>Continuar con Google</span>
+            </a>
+            <br>
+            <span>¿No tienes una cuenta? <a href="index.html">Regístrate</a></span>
+        </div>
+    </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>
