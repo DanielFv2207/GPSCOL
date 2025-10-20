@@ -164,50 +164,46 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Modelos -->
-    <script src="Logica/Modelos/Ciudad.js"></script>
-    <script src="Logica/Modelos/Mecanico.js"></script>
-    <script src="Logica/Modelos/Ruta.js"></script>
+    <script src="modelo/Ciudad.js"></script>
+    <script src="modelo/Mecanico.js"></script>
+    <script src="modelo/Ruta.js"></script>
+    <script src="modelo/EstadoUsuario.js"></script>
+    <script src="modelo/EstadoGratuito.js"></script>
+    <script src="modelo/EstadoPremium.js"></script>
+    <script src="modelo/Usuario.js"></script>
 
-    <!-- Servicios -->
-    <script src="Logica/Servicios/CiudadService.js"></script>
-    <script src="Logica/Servicios/MecanicoService.js"></script>
-    <script src="Logica/Servicios/RutaService.js"></script>
+    <!-- Servicios y Utilidades -->
+    <script src="main/CiudadService.js"></script>
+    <script src="main/MecanicoService.js"></script>
+    <script src="main/RutaService.js"></script>
+    <script src="main/Graph.js"></script>
+    <script src="main/GeoLocation.js"></script>
 
     <!-- Estrategias de Ruta (Strategy Pattern) -->
-    <script src="Logica/EstrategiasRuta/CalculadoraRuta.js"></script>
-    <script src="Logica/EstrategiasRuta/CalculadoraRutaRapida.js"></script>
-    <script src="Logica/EstrategiasRuta/CalculadoraRutaSegura.js"></script>
-    <script src="Logica/EstrategiasRuta/CalculadoraRutaEscenica.js"></script>
-
-    <!-- Estados de Usuario (State Pattern) -->
-    <script src="Logica/EstadosUsuario/EstadoUsuario.js"></script>
-    <script src="Logica/EstadosUsuario/EstadoGratuito.js"></script>
-    <script src="Logica/EstadosUsuario/EstadoPremium.js"></script>
-    <script src="Logica/Usuario.js"></script>
-
-    <!-- Utilidades -->
-    <script src="Logica/Utilidades/Graph.js"></script>
-    <script src="Logica/Utilidades/Geolocation.js"></script>
-
-    <!-- Vistas (MVC) -->
-    <script src="Vistas/SharedView.js"></script>
-    <script src="Vistas/CiudadView.js"></script>
-    <script src="Vistas/MecanicoView.js"></script>
-    <script src="Vistas/RutaView.js"></script>
+    <script src="main/CalculadoraRuta.js"></script>
+    <script src="main/CalculadoraRutaRapida.js"></script>
+    <script src="main/CalculadoraRutaSegura.js"></script>
+    <script src="main/CalculadoraRutaEscenica.js"></script>
 
     <!-- Observadores (Observer Pattern) -->
-    <script src="Logica/Observadores/Observer.js"></script>
-    <script src="Logica/NavegacionService.js"></script> <!-- Sujeto -->
-    <script src="Logica/Observadores/MapaObservador.js"></script>
-    <script src="Logica/Observadores/PanelNavegacionObservador.js"></script>
+    <script src="main/Observer.js"></script>
+    <script src="main/NavegacionService.js"></script> <!-- Sujeto -->
+    <script src="main/MapaObservador.js"></script>
+    <script src="main/PanelNavegacionObservador.js"></script>
+
+    <!-- Vistas (MVC) -->
+    <script src="vista/SharedView.js"></script>
+    <script src="vista/CiudadView.js"></script>
+    <script src="vista/MecanicoView.js"></script>
+    <script src="vista/RutaView.js"></script>
 
     <!-- Controladores (MVC) -->
-    <script src="Logica/Controladores/CiudadController.js"></script>
-    <script src="Logica/Controladores/MecanicoController.js"></script>
-    <script src="Logica/Controladores/RutaController.js"></script>
+    <script src="controlador/CiudadController.js"></script>
+    <script src="controlador/MecanicoController.js"></script>
+    <script src="controlador/RutaController.js"></script>
 
     <!-- Inicialización de la aplicación -->
-    <script src="Logica/main.js"></script>
+    <script src="main/main.js"></script>
 </body>
 
 </html>
