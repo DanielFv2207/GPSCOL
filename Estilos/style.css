@@ -230,3 +230,16 @@ body {
 #rutaDistancia {
     width: 100%;
 }
+
+.premium1 {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
