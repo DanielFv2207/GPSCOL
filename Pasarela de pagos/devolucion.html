@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulación de Reembolso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #mensaje {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simulador de Reembolso</h2>
+  <p>Haz clic para generar un reembolso simulado de <strong>$15.000 COP</strong>.</p>
+
+  <button id="btnReembolso">Generar Reembolso</button>
+  <div id="mensaje"></div>
+
+  <script>
+    document.getElementById("btnReembolso").addEventListener("click", () => {
+      console.log("🔄 Enviando solicitud GET simulada para generar reembolso...");
+
+      // 🔹 Hacemos un GET real a un recurso local (no da error de CORS)
+      fetch("data:application/json,{\"status\":\"ok\",\"mensaje\":\"Reembolso generado\"}")
+        .then(response => response.json())
+        .then(data => {
+          console.log(" El reembolso se ha generado con éxito");
+          document.getElementById("mensaje").textContent = " Reembolso generado con éxito.";
+        })
+        .catch(() => {
+          console.error(" Error al generar el reembolso");
+          document.getElementById("mensaje").textContent = "Error en la simulación.";
+        });
+    });
+  </script>
+
+</body>
+</html>
+

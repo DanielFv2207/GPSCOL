@@ -1,4 +1,4 @@
-const mp = new MercadoPago("TEST-5acbcac9-9b91-42ce-85e9-91fec3a663ce", {
+const mp = new MercadoPago("TEST-80915915-6bba-4cfa-bf06-2d2f5274df1e", {
   locale: "es-CO" // idioma/región de Colombia
 }); // <-- coloca aquí tu Public Key
 

@@ -8,7 +8,7 @@ app.use(express.json());
 
 
 const client = new MercadoPagoConfig({
-  accessToken: "TEST-3744892682630809-101721-43db17501ffe28bcfe15dad58d93d2bd-2932147937",
+  accessToken: "TEST-7224136998790975-102718-5164e0aff040da64c27600278283bb4e-2932147937",
 });
 
 const preference = new Preference(client);
