@@ -7,18 +7,22 @@
     <title>MotoGPS Colombia</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="Estilos/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="header">
-        <h1>🏍️ MotoGPS Colombia</h1>
+        <h1><i class="ri-motorbike-fill"></i> MotoGPS Colombia</h1>
         <button onclick="window.location.href='pasarela de pagos/index.html'" class="premium1">Comprar Premium</button>
     </header>
 
     <div class="container">
         <div class="sidebar">
             <div class="section">
-                <h3>📍 Planificar Ruta</h3>
+                <h3><i class="ri-map-pin-2-fill"></i> Planificar Ruta</h3>
                 <div class="input-group">
                     <label>Ciudad de Origen:</label>
                     <select id="ciudadOrigen">
@@ -41,12 +45,13 @@
                         <option value="safe">Más Segura</option>
                     </select>
                 </div>
-                <button class="btn" id="btnCalcularRuta">🗺️ Calcular Ruta</button>
-                <button class="btn btn-secondary" id="btnMiUbicacion">📍 Mi Ubicación</button>
+                <button class="btn" id="btnCalcularRuta"><i class="ri-map-2-fill"></i> Calcular Ruta</button>
+                <button class="btn btn-secondary" id="btnMiUbicacion"><i class="ri-crosshair-2-fill"></i> Mi
+                    Ubicación</button>
             </div>
 
             <div class="section">
-                <h3>🔧 Mecánicos Cercanos</h3>
+                <h3><i class="ri-tools-fill"></i> Mecánicos Cercanos</h3>
                 <div class="input-group">
                     <label>Radio de búsqueda:</label>
                     <select id="radioMecanicos">
@@ -56,19 +61,19 @@
                         <option value="50">50 km</option>
                     </select>
                 </div>
-                <button class="btn" id="btnBuscarMecanicos">🔍 Buscar Mecánicos</button>
+                <button class="btn" id="btnBuscarMecanicos"><i class="ri-search-line"></i> Buscar Mecánicos</button>
                 <div id="mecanicosList" class="mechanics-list">
                     <div class="loading">Busca mecánicos cerca de tu ubicación</div>
                 </div>
             </div>
 
             <div class="section" id="routeInfo" style="display: none;">
-                <h3>📊 Información de Ruta</h3>
+                <h3><i class="ri-bar-chart-fill"></i> Información de Ruta</h3>
                 <div id="routeDetails" class="route-info"></div>
             </div>
 
             <div class="section">
-                <h3>🏙️ Agregar Nueva Ciudad</h3>
+                <h3><i class="ri-building-4-fill"></i> Agregar Nueva Ciudad</h3>
                 <div class="input-group">
                     <label>ID (sin espacios):</label>
                     <input type="text" id="nuevaCiudadId" placeholder="Ej: armenia">
@@ -85,11 +90,11 @@
                     <label>Longitud:</label>
                     <input type="number" step="0.0001" id="nuevaCiudadLng" placeholder="Ej: -75.6757">
                 </div>
-                <button class="btn" id="btnAgregarCiudad">🏙️ Agregar Ciudad</button>
+                <button class="btn" id="btnAgregarCiudad"><i class="ri-add-circle-fill"></i> Agregar Ciudad</button>
             </div>
 
             <div class="section">
-                <h3>🛣️ Agregar Nueva Ruta</h3>
+                <h3><i class="ri-road-map-fill"></i> Agregar Nueva Ruta</h3>
                 <div class="input-group">
                     <label>Ciudad Origen:</label>
                     <select id="rutaCiudadOrigen">
@@ -117,11 +122,11 @@
                         <option value="dangerous">Peligrosa</option>
                     </select>
                 </div>
-                <button class="btn" id="btnAgregarRuta">🛣️ Agregar Ruta</button>
+                <button class="btn" id="btnAgregarRuta"><i class="ri-add-line"></i> Agregar Ruta</button>
             </div>
 
             <div class="section">
-                <h3>➕ Agregar Nuevo Mecánico</h3>
+                <h3><i class="ri-add-box-fill"></i> Agregar Nuevo Mecánico</h3>
                 <div class="input-group">
                     <label>Nombre del Taller:</label>
                     <input type="text" id="nombreTaller" placeholder="Ej: Taller Moto Express">
@@ -151,7 +156,7 @@
                     <label>Teléfono:</label>
                     <input type="tel" id="telefonoMecanico" placeholder="Ej: 321-555-0123">
                 </div>
-                <button class="btn" id="btnAgregarMecanico">🔧 Agregar Mecánico</button>
+                <button class="btn" id="btnAgregarMecanico"><i class="ri-tools-line"></i> Agregar Mecánico</button>
             </div>
         </div>
 

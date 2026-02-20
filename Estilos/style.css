@@ -1,3 +1,27 @@
+:root {
+    /* Color Palette */
+    --primary: #1e40af;       /* Deep Blue */
+    --primary-dark: #1e3a8a;  /* Darker Blue */
+    --primary-light: #3b82f6; /* Bright Blue */
+    --secondary: #64748b;     /* Slate Gray */
+    --background: #f8fafc;    /* Very Light Blue-Gray */
+    --surface: #ffffff;       /* White */
+    --text: #0f172a;          /* Dark Slate */
+    --text-light: #64748b;    /* Light Slate */
+    --border: #e2e8f0;        /* Light Border */
+    --danger: #ef4444;
+    --success: #10b981;
+    --warning: #f59e0b;
+    
+    /* Spacing & Layout */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,241 +29,320 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    overflow-x: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Header */
 .header {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
     padding: 1rem 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
 }
 
 .header h1 {
-    color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
+.header h1 i {
+    color: var(--primary-light);
+    font-size: 1.75rem;
+}
+
+.premium1 {
+    background-color: var(--warning);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.premium1:hover {
+    background-color: #d97706;
+}
+
+/* Main Layout */
 .container {
     display: flex;
-    height: calc(100vh - 80px);
-    gap: 1rem;
-    padding: 1rem;
+    flex: 1;
+    overflow: hidden; /* Prevent body scroll */
+    gap: 0;
 }
 
+/* Sidebar */
 .sidebar {
-    width: 350px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 380px;
+    background-color: var(--surface);
+    border-right: 1px solid var(--border);
     overflow-y: auto;
-    transition: all 0.3s ease;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.sidebar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
 }
 
+/* Map Container */
 .map-container {
     flex: 1;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     position: relative;
+    background-color: #e5e7eb; /* Placeholder color before map loads */
 }
 
 #map {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
+/* Sections */
 .section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: linear-gradient(135deg, #f8f9ff 0%, #e8f0ff 100%);
-    border-radius: 15px;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    transition: all 0.3s ease;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+    box-shadow: var(--shadow-md);
+    border-color: #cbd5e1;
 }
 
 .section h3 {
-    color: #4f46e5;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    color: var(--primary-dark);
+    font-size: 1.1rem;
     font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
 }
 
+.section h3 i {
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+/* Forms */
 .input-group {
     margin-bottom: 1rem;
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #374151;
+    margin-bottom: 0.375rem;
+    color: var(--text);
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .input-group input,
 .input-group select {
     width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: var(--text);
+    background-color: var(--surface);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
 }
 
 .input-group input:focus,
 .input-group select:focus {
     outline: none;
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-    transform: translateY(-1px);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Buttons */
 .btn {
-    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--primary);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transition: all 0.2s;
+    font-family: inherit;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn:active {
     transform: translateY(0);
 }
 
+.btn i {
+    font-size: 1.1rem;
+}
+
 .btn-secondary {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    margin-left: 0.5rem;
+    background-color: var(--surface);
+    color: var(--secondary);
+    border: 1px solid var(--border);
+    margin-top: 0.75rem;
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    color: var(--text);
+    border-color: #cbd5e1;
+}
+
+/* Specific Section Tweaks */
+#routeInfo {
+    background-color: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+#routeInfo h3 {
+    color: #1e40af;
+    border-bottom-color: #bfdbfe;
 }
 
 .route-info {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-top: 1rem;
-    border: 2px solid #f59e0b;
+    font-size: 0.95rem;
+    color: var(--text);
 }
 
+/* Mechanics List */
 .mechanics-list {
-    max-height: 300px;
+    max-height: 250px;
     overflow-y: auto;
+    margin-top: 1rem;
+    padding-right: 0.25rem;
 }
 
 .mechanic-card {
-    background: white;
-    padding: 1rem;
+    background: var(--surface);
+    padding: 0.875rem;
     margin-bottom: 0.75rem;
-    border-radius: 10px;
-    border-left: 4px solid #10b981;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--success);
+    transition: transform 0.2s;
 }
 
 .mechanic-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateX(2px);
+    border-color: #cbd5e1;
 }
 
 .mechanic-name {
     font-weight: 600;
-    color: #059669;
+    color: var(--text);
     margin-bottom: 0.25rem;
+    display: block;
 }
 
 .mechanic-distance {
-    font-size: 0.9rem;
-    color: #6b7280;
+    font-size: 0.85rem;
+    color: var(--text-light);
 }
 
 .loading {
     text-align: center;
-    color: #6b7280;
+    color: var(--text-light);
     font-style: italic;
+    font-size: 0.9rem;
+    padding: 1rem;
 }
 
+/* Status Indicator */
 .status-indicator {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(16, 185, 129, 0.9);
-    color: white;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--text);
     padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
+.status-indicator::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--success);
+    border-radius: 50%;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        height: auto;
+        overflow: auto;
     }
 
     .sidebar {
         width: 100%;
-        margin-bottom: 1rem;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
     }
 
     .map-container {
-        height: 400px;
+        height: 50vh;
+        min-height: 400px;
     }
-}
-
-/* Estilo para la sección de rutas */
-#rutaInfo {
-    background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
-    border: 1px solid #00bcd4;
-}
-
-/* Estilo para los selectores de ruta */
-#rutaCiudadOrigen, #rutaCiudadDestino {
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo para el input de distancia */
-#rutaDistancia {
-    width: 100%;
-}
-
-.premium1 {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    background-color: #ff9800;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
 }
